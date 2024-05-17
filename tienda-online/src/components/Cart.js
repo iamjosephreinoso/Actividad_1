@@ -15,6 +15,10 @@ import { useState, useEffect } from 'react';
   };
 
   const limpiarCarrito = () => {
+	const carrito = localStorage.getItem('cart');
+    if (carrito) {
+      localStorage.setItem('devolucion', carrito);
+    }
     setCarrito([]);
     localStorage.removeItem('cart');
   };
